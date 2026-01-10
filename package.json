@@ -1,0 +1,43 @@
+{
+  "name": "virtual-cfo",
+  "version": "1.0.0",
+  "description": "VirtualCFO - AI-Powered Financial Assistant for Indian SMBs",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && npm run dev",
+    "build": "npm run build:frontend && npm run build:backend",
+    "build:frontend": "cd frontend && npm run build",
+    "build:backend": "cd backend && npm run build",
+    "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install",
+    "clean": "rm -rf node_modules frontend/node_modules backend/node_modules frontend/dist backend/dist"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KSS-1227/Virtual_CFO.git"
+  },
+  "keywords": [
+    "fintech",
+    "ai",
+    "sme",
+    "financial-management",
+    "react",
+    "nodejs",
+    "supabase",
+    "openai"
+  ],
+  "author": "Virtual CFO Team",
+  "license": "MIT"
+}
