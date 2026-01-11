@@ -180,12 +180,9 @@ const getBusinessContext = async () => {
 
 const getAlertPreferences = async () => {
   try {
-    const { data } = await supabase
-      .from('voice_preferences')
-      .select('*')
-      .single();
-    
-    return data || {
+    // Since voice_preferences table doesn't exist in the database schema,
+    // return default preferences
+    return {
       alert_frequency: 'daily',
       voice_language: 'hi',
       business_hours_only: true,

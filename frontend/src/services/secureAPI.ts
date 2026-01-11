@@ -81,11 +81,11 @@ export class SecureAPIService {
       return {
         success: response.ok,
         data: response.ok ? result : undefined,
-        error: response.ok ? undefined : result.error || `HTTP ${response.status}: ${response.statusText}`,
+        error: (result as any)?.error || `HTTP ${response.status}: ${response.statusText}`,
         rateLimitInfo: await this.extractRateLimitInfo(response)
       };
 
-    } catch (error) {
+    } catch (error: any) {
       console.error('Secure API call failed:', error);
       
       return {

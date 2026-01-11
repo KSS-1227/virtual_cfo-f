@@ -96,7 +96,7 @@ export class SecurityScanner {
       if (suspiciousContent.length > 0) {
         warnings.push(`Potentially suspicious content detected: ${suspiciousContent.join(', ')}`);
       }
-    } catch (error) {
+    } catch (error: any) {
       errors.push({
         code: 'INVALID_BASE64',
         message: 'Failed to decode base64 data',
