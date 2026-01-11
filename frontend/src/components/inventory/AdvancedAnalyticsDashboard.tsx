@@ -7,7 +7,7 @@ import {
   TrendingUp, TrendingDown, AlertTriangle, Package, 
   BarChart3, PieChart, Calendar, RefreshCw 
 } from 'lucide-react';
-import { useToast } from '@/hooks/use-toast';
+import { useToast } from '@/components/ui/use-toast';
 
 interface AnalyticsData {
   inventory_summary: {
